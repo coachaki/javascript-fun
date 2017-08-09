@@ -1,6 +1,17 @@
 var gameBoard = '----------';
 console.log(gameBoard)
 
+var myGamePiece;
+var myObstacles = [];
+var myScore;
+
+function startGame() {
+    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece.gravity = 0.05;
+    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+    myGameArea.start();
+}
+
 var gameArea = {
 	canvas : document.createElement("canvas"),
 	start : function() {
@@ -9,5 +20,13 @@ var gameArea = {
 		this.context = this.canvas.getContext("2d")
 		document.body.insertBefore(this.canvas, document.body.childNodes[0])
 		this.frameNo = 0
+		this.interval = setInterval(updateGameArea, 20)
+	},
+	clear: function() {
+		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
 	}
+}
+
+function updateGameArea() {
+	
 }
