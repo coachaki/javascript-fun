@@ -30,3 +30,11 @@ var gameArea = {
 function updateGameArea() {
 	
 }
+
+var component = (function() {
+	var width, height, color, x, y, type
+
+	return {
+		setWidth: function(w) { width = w }
+	}
+})()
